@@ -1,6 +1,9 @@
 # env
 .env
 
+# OpenCode
+AGENTS.md
+
 # Compiled class file
 *.class
 

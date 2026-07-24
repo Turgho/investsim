@@ -2,7 +2,7 @@
 .env
 
 # OpenCode
-AGENTS.md
+**/AGENTS.md
 
 # Compiled class file
 *.class

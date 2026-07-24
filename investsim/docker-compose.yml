@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:18
+    image: postgres:18-alpine
     container_name: investsim-postgres
     ports:
       - "5432:5432"
@@ -8,6 +8,11 @@ services:
       POSTGRES_DB: investsim
       POSTGRES_USER: investsim
       POSTGRES_PASSWORD: investsim
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U investsim -d investsim"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     volumes:
       - investsim-pgdata:/var/lib/postgresql/data
 

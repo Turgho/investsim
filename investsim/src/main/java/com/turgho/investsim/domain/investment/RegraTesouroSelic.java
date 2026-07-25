@@ -7,11 +7,9 @@ import java.util.List;
 
 import com.turgho.investsim.domain.rate.DailyRate;
 
-// Regra de calculo do Tesouro Selic
 // Acompanha a taxa Selic integral (sem percentual contratado)
 public class RegraTesouroSelic implements InvestmentRule {
 
-    // Precisao de 34 casas significativas — double tem ~15, causaria erro em acumulacao de taxas
     private static final MathContext PRECISAO = MathContext.DECIMAL128;
 
     @Override

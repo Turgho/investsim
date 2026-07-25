@@ -5,16 +5,16 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_DB: investsim
-      POSTGRES_USER: investsim
-      POSTGRES_PASSWORD: investsim
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U investsim -d investsim"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
       interval: 5s
       timeout: 5s
       retries: 5
     volumes:
-      - investsim-pgdata:/var/lib/postgresql/data
+      - investsim-pgdata:/var/lib/postgresql
 
 volumes:
   investsim-pgdata:

@@ -12,10 +12,11 @@ import com.turgho.investsim.domain.investment.RegraTesouroSelic;
 import com.turgho.investsim.domain.rate.CalculoIR;
 import com.turgho.investsim.domain.rate.DailyRate;
 
-// Camada Domain: sem dependencia de Spring, testavel com JUnit puro
+import org.springframework.stereotype.Service;
+
+@Service
 public class SimulatorService {
 
-    // Sem estado — reutilizaveis entre chamadas
     private final RegraPoupanca regraPoupanca = new RegraPoupanca();
     private final RegraTesouroSelic regraTesouroSelic = new RegraTesouroSelic();
 
